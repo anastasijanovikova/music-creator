@@ -13,3 +13,6 @@ fname = raw_input()
 fname = fname.lower()
 fname_num = list()
 fname = list(fname)
+
+print(name)
+print(fname)
