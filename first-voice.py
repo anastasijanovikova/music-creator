@@ -15,6 +15,9 @@ fname = fname.lower()
 fname_num = list()
 fname = list(fname)
 
+n1 = len(name_num)
+n2 = len(fname_num)
+
 #generate list of notes for one voice
 def generator(note_num):
     num = 0
@@ -24,3 +27,9 @@ def generator(note_num):
         noteList.append(note)
         print(noteList)
         num += 1
+
+generator(6)
+
+for note in noteList:
+    note.pitch.ps = 70
+    
