@@ -1,24 +1,23 @@
 import music21
 import string
 
-print("Enter your birth date")
-day_in = int(input())
-month_in = int(input())
-year_in = int(input())
 print("Enter your name")
+first_name = raw_input()
 name = raw_input()
+
 name = name.lower()
-name_num = list()
 name = list(name)
-fname = raw_input()
-fname = fname.lower()
-fname_num = list()
-fname = list(fname)
+name_num = list()
+first_name = first_name.lower()
+first_name = list(first_name)
+first_name_num = list()
 
-n1 = len(name_num)
-n2 = len(fname_num)
+day = int(input())
+month = int(input())
+year = int(input())
 
-#generate list of notes for one voice
+noteList = []
+
 def generator(note_num):
     num = 0
     while num < note_num:
@@ -27,9 +26,46 @@ def generator(note_num):
         noteList.append(note)
         print(noteList)
         num += 1
+        
+def name_to_num(char_list, num_list, el, num):
+    if el in char_list:
+        time = 0
+        times = char_list.count(el)
+        while time < times:
+            num_list.append(num)
+            time +=1
+            
+            
+def name_sum_def(num_list, num):
+    num = 0
+    for n in num_list:
+        num += n
+        
+       
+def name_mult_def(num_list, num):
+    num = 1
+    for n in num_list:
+        num *= n
 
-generator(6)
+        
+n1 = len(first_name)
+n2 = len(name)
 
-for note in noteList:
-    note.pitch.ps = 70
+while n1 > 2:
+    n1 -= 3
     
+while n2 > 2:
+    n2 -= 3
+    
+    
+if n1 == 0:
+    generator(20)
+if n1 == 1:
+    generator(30)
+if n1 == 2:
+    generator(40)
+voice_1 = music21.stream.Stream()
+
+
+for n in noteList:
+    voice_1.append()
