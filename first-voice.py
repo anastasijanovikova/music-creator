@@ -21,7 +21,6 @@ noteList = []
 def generator(note_num):
     num = 0
     while num < note_num:
-        note = "note" + str(num + 1)
         note = music21.note.Note
         noteList.append(note)
         print(noteList)
@@ -67,5 +66,5 @@ if n1 == 2:
 voice_1 = music21.stream.Stream()
 
 
-for n in noteList:
-    voice_1.append()
+#for n in noteList:
+#   voice_1.append()
