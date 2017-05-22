@@ -18,7 +18,7 @@ year = int(input())
 ## generate list of empty notes
 # @param    note_num    number of notes to generate
 # @return   noteList    generated list
-def generator(note_num):
+def generator(note_num, noteList):
     noteList = []
     for i in xrange(note_num):
         noteList.append(music21.note.Note)
@@ -56,21 +56,15 @@ def name_mult_def(num_list, num):
 n1 = len(first_name)
 n2 = len(name)
 
-while n1 > 2:
-    n1 -= 3
-    
-while n2 > 2:
-    n2 -= 3
-    
+n1 = n1 % 4    
     
 if n1 == 0:
-    generator(20)
+    print("fugue 2")
 if n1 == 1:
-    generator(30)
+    print("fugue 8")
 if n1 == 2:
-    generator(40)
-voice_1 = music21.stream.Stream()
+    print("fugue 9")
+if n1 == 3:
+    print("fugue 19")
 
 
-#for n in noteList:
-#   voice_1.append()
