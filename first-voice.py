@@ -1,50 +1,56 @@
 import music21
 import string
 
+# input name 
 print("Enter your name")
-first_name = raw_input()
-name = raw_input()
+first_name = list(raw_input().lower())
+name = list(raw_input().lower())
 
-name = name.lower()
-name = list(name)
+# create some empty lists
 name_num = list()
-first_name = first_name.lower()
-first_name = list(first_name)
 first_name_num = list()
 
+# input birthday
 day = int(input())
 month = int(input())
 year = int(input())
 
-noteList = []
-
+## generate list of empty notes
+# @param    note_num    number of notes to generate
+# @return   noteList    generated list
 def generator(note_num):
-    num = 0
-    while num < note_num:
-        note = music21.note.Note
-        noteList.append(note)
+    noteList = []
+    for i in xrange(note_num):
+        noteList.append(music21.note.Note)
         print(noteList)
-        num += 1
+    return noteList
         
+## idk what this does lol
+# @param    char_list   
+# @param    num_list    
+# @param    el 
+# @param    num    
+# @return   num_list
 def name_to_num(char_list, num_list, el, num):
     if el in char_list:
-        time = 0
         times = char_list.count(el)
-        while time < times:
+        for i in xrange(times):
             num_list.append(num)
-            time +=1
+    return num_list
             
-            
-def name_sum_def(num_list, num):
-    num = 0
-    for n in num_list:
-        num += n
+## sum elements of a list ?
+# @param    num_list    elements to sum
+def name_sum_def(num_list):
+    return sum(num_list)
         
-       
+## multiply all elements of list by const
+# @param    num_list    list to multiply
+# @param    num    const to multiply by
+# @return   multiplied list
 def name_mult_def(num_list, num):
-    num = 1
-    for n in num_list:
-        num *= n
+    for i in xrange(len(num_list)):
+        num_list[i] *= num
+    return num_list
 
         
 n1 = len(first_name)
